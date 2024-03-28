@@ -4,9 +4,7 @@ import {
   Text,
   TextInput,
   SafeAreaView,
-  Button,
   FlatList,
-  Alert,
   Pressable,
   Image,
 } from 'react-native';
@@ -58,7 +56,7 @@ const Notes = () => {
         setNotesData(JSON.parse(storedNotes));
       }
     } catch (error) {
-      console.error('Error loading notes: ', error);
+      console.error(error);
     }
   };
 
@@ -67,7 +65,7 @@ const Notes = () => {
       await AsyncStorage.setItem('notes', JSON.stringify(updatedNotes));
       setNotesData(updatedNotes);
     } catch (error) {
-      console.error('Error saving notes: ', error);
+      console.error(error);
     }
   };
 
